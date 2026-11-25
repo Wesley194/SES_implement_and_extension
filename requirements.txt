@@ -1,0 +1,8 @@
+accelerate==1.16.0
+cma==4.6.0
+diffusers==0.43.0
+matplotlib==3.11.2
+numpy==2.5.5
+pillow==13.0.0
+PyWavelets==1.10.0
+transformers==5.24.0
