@@ -12,8 +12,7 @@ ALGORITHMS = {
     "SES-CMA": partial(ses_cma, diagonal=False),
     "SES-CMA-diag": partial(ses_cma, diagonal=True),
     "SES-Progressive": ses_progressive,
-    "SES-GNN": partial(ses_gnn, bandpass=False),
-    "SES-GNN-Bandpass": partial(ses_gnn, bandpass=True),
+    "SES-GNN": ses_gnn,
 }
 
 

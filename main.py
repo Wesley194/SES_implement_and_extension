@@ -33,9 +33,13 @@ DEFAULT_PROMPTS = [
     "A red colored dog.",
     "A photo of a wine glass on a wooden table.",
     "A cat wearing a small hat, studio lighting.",
+    "A blue backpack on the left of a yellow umbrella.",
+    "Four apples arranged in a row on a marble counter.",
+    "A ceramic teapot shaped like an elephant, warm morning light.",
+    "An astronaut riding a horse on Mars, photorealistic.",
 ]
 
-DEFAULT_METHODS = ["BoN", "SES(CEM)", "SES-CMA", "SES-CMA-diag"]
+DEFAULT_METHODS = ["BoN", "SES(CEM)", "SES-CMA", "SES-CMA-diag", "SES-GNN"]
 
 
 def safe_name(s: str) -> str:
