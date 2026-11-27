@@ -59,7 +59,8 @@ def ses_progressive(
     objective,
     shape,
     budget=200,
-    levels=(6, 5, 4),
+    levels=None,
+    level=3,
     pop=10,
     elite=5,
     gamma=1e-5,
@@ -71,6 +72,15 @@ def ses_progressive(
 ) -> SearchResult:
     """Coarse-to-fine progressive SES unfreezing finer detail bands per stage."""
     rng = np.random.default_rng(seed)
+
+    _, h_dim, w_dim = shape
+    max_possible = int(np.log2(min(h_dim, w_dim)))
+    if levels is None:
+        start_lvl = min(level + 2, max_possible)
+        levels = tuple(range(start_lvl, level - 1, -1))
+    if not levels:
+        levels = (level,)
+
     space = WaveletSpace(shape, max_level=levels[0], wavelet=wavelet, rng=rng)
     n_stage = len(levels)
     mu = var = pool = None
